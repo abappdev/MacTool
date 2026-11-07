@@ -12,15 +12,19 @@ security find-identity -v -p codesigning
 
 Add exports (values from the command above — do **not** commit secrets):
 
+Permanent one-liner (zsh):
+
 ```bash
-# ~/.zshrc  (or ~/.bashrc)
-export MACTOOL_TEAM_ID="YOUR_TEAM_ID"   # 10-char Team ID in parentheses
-export MACTOOL_SIGN_IDENTITY="Developer ID Application: Your Name (YOUR_TEAM_ID)"
-export MACTOOL_NOTARY_PROFILE="MacTool"
-# export MACTOOL_APPLE_ID="you@example.com"   # only needed when storing notary creds
+grep -q 'MACTOOL_TEAM_ID' ~/.zshrc 2>/dev/null || cat >> ~/.zshrc <<'EOF'
+
+# MacTool / shared Developer ID (common across apps)
+export MACTOOL_TEAM_ID="44GWMTNP57"
+export MACTOOL_SIGN_IDENTITY="Developer ID Application: Abhishek Bhalerao (44GWMTNP57)"
+EOF
+source ~/.zshrc
 ```
 
-Template: [`scripts/env.example`](../scripts/env.example)
+Notary profile is **hardcoded** as `MacTool` in `scripts/release.sh` (Keychain). Template: [`scripts/env.example`](../scripts/env.example)
 
 Reload:
 
@@ -67,9 +71,9 @@ Pipeline:
 
 | Variable | Required | Notes |
 |---|---|---|
-| `MACTOOL_TEAM_ID` | yes | Apple Team ID |
-| `MACTOOL_SIGN_IDENTITY` | yes | Full Developer ID Application identity string |
-| `MACTOOL_NOTARY_PROFILE` | for notarize | Keychain profile name |
+| `MACTOOL_TEAM_ID` | yes | Apple Team ID (bashrc) |
+| `MACTOOL_SIGN_IDENTITY` | yes | Developer ID Application string (bashrc) |
+| Notary profile | hardcoded | `MacTool` in `release.sh` |
 | `MACTOOL_VERSION` | no | default `1.0.1` |
 | `MACTOOL_BUILD` | no | default `1` |
 

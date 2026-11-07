@@ -2,13 +2,13 @@
 # MacTool release: archive → Developer ID sign → drop-to-Applications DMG →
 # (optional) notarize + staple → GitHub Release.
 #
-# Required env (put in ~/.zshrc — see scripts/env.example):
+# Shared signing env (put in ~/.zshrc — common across apps):
 #   MACTOOL_TEAM_ID
 #   MACTOOL_SIGN_IDENTITY
+# Notary profile is hardcoded to "MacTool" (Keychain via notarytool store-credentials).
 # Optional:
 #   MACTOOL_VERSION (default 1.0.1)
 #   MACTOOL_BUILD (default 1)
-#   MACTOOL_NOTARY_PROFILE (default MacTool)
 #
 # Usage:
 #   ./scripts/release.sh
@@ -27,7 +27,8 @@ SIGN_IDENTITY="${MACTOOL_SIGN_IDENTITY:-}"
 BUNDLE_ID="in.abappdev.MacTool"
 SCHEME="MacTool"
 CONFIGURATION="Release"
-NOTARY_PROFILE="${MACTOOL_NOTARY_PROFILE:-MacTool}"
+# Hardcoded Keychain profile name for this app (notarytool store-credentials "MacTool").
+NOTARY_PROFILE="MacTool"
 DERIVED="${ROOT}/build/DerivedData"
 ARCHIVE_PATH="${ROOT}/build/MacTool.xcarchive"
 EXPORT_DIR="${ROOT}/build/export"
