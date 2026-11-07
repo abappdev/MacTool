@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0214AF5196B5D71F2000C994 /* TrayMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992970CA8D263E971BB5510 /* TrayMenuView.swift */; };
+		3D56A23D3C23F3486DB2C414 /* MacToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F42CD5EE2633776B6BB25 /* MacToolApp.swift */; };
+		426F07C343E207F3AC7FD052 /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5CCFC5CA3A1926F3DA91E /* PermissionsService.swift */; };
+		4F627BEC80F4FAAA6E5ADA6F /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F55C88480E2321B17FBAB /* PermissionsView.swift */; };
+		57E61B170293EBC6C4CC0E4E /* CursorMovementIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA755A1531C34E330B57D6 /* CursorMovementIntervalTests.swift */; };
+		911984AFBB34F8D97D9A8E00 /* CursorMovementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595EF7966569C8FF1CB6D807 /* CursorMovementService.swift */; };
+		BC1CB7052EC84A12D19F20F9 /* CursorMovementInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597BC3D1286E6356898EF31 /* CursorMovementInterval.swift */; };
+		D00A9FE9F63A901A5F12547C /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46733D469374E292DF0DD413 /* AppEnvironment.swift */; };
+		D75AC0E9FB23E4FD4D5FDF61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C3407CC507B16E3BAA65E92 /* Assets.xcassets */; };
+		E54CC86933F86191A3F1D049 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEC92019BC9FE004861706C /* SettingsStore.swift */; };
+		F150958CE1CB703F34B14E1A /* MouseNudgePerforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FE7EC6A6AB816404718DA /* MouseNudgePerforming.swift */; };
+		F4390FC5E7BE33AC9C01E701 /* LoginItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D809AD10372F9A6A34F7BB /* LoginItemService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F969570ABABA171E1A03A43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B684E0DD86252F65AA5658 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A34725E3DE1B9F6C459B28F;
+			remoteInfo = MacTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24B5CCFC5CA3A1926F3DA91E /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
+		46733D469374E292DF0DD413 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		48EA755A1531C34E330B57D6 /* CursorMovementIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorMovementIntervalTests.swift; sourceTree = "<group>"; };
+		4C6FE7EC6A6AB816404718DA /* MouseNudgePerforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseNudgePerforming.swift; sourceTree = "<group>"; };
+		595EF7966569C8FF1CB6D807 /* CursorMovementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorMovementService.swift; sourceTree = "<group>"; };
+		6C3407CC507B16E3BAA65E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79D809AD10372F9A6A34F7BB /* LoginItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemService.swift; sourceTree = "<group>"; };
+		7C5F55C88480E2321B17FBAB /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		A992970CA8D263E971BB5510 /* TrayMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayMenuView.swift; sourceTree = "<group>"; };
+		B99F42CD5EE2633776B6BB25 /* MacToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacToolApp.swift; sourceTree = "<group>"; };
+		C41CA7808195917842F41C9E /* MacTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92BF12FC07A1D8B1458F16E /* MacTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacTool.entitlements; sourceTree = "<group>"; };
+		CFEC92019BC9FE004861706C /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		D874AFA0D8377D097E3441F8 /* MacToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F597BC3D1286E6356898EF31 /* CursorMovementInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorMovementInterval.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		24FCAAD03297776CE1D07673 /* MacToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				48EA755A1531C34E330B57D6 /* CursorMovementIntervalTests.swift */,
+			);
+			path = MacToolTests;
+			sourceTree = "<group>";
+		};
+		391994F7AFA39F27E40FFE88 /* MacTool */ = {
+			isa = PBXGroup;
+			children = (
+				6DA983D228C9DE670F8DFD9E /* App */,
+				4BAF6BEB28B0146CB800766C /* Menu */,
+				3E0879654BB6E917F5FC0D32 /* Resources */,
+				8A151B99F6C55AC25A135170 /* Services */,
+			);
+			path = MacTool;
+			sourceTree = "<group>";
+		};
+		3E0879654BB6E917F5FC0D32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6C3407CC507B16E3BAA65E92 /* Assets.xcassets */,
+				C92BF12FC07A1D8B1458F16E /* MacTool.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4BAF6BEB28B0146CB800766C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7C5F55C88480E2321B17FBAB /* PermissionsView.swift */,
+				A992970CA8D263E971BB5510 /* TrayMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		6257D9184697EA92A559DBB4 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				CFEC92019BC9FE004861706C /* SettingsStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		65E5C4F0287E16A9243D5947 = {
+			isa = PBXGroup;
+			children = (
+				391994F7AFA39F27E40FFE88 /* MacTool */,
+				84A089A7666D34C6513F4D0B /* Tests */,
+				C8E332E99E726BB58812CECC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6DA983D228C9DE670F8DFD9E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46733D469374E292DF0DD413 /* AppEnvironment.swift */,
+				B99F42CD5EE2633776B6BB25 /* MacToolApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		84A089A7666D34C6513F4D0B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				24FCAAD03297776CE1D07673 /* MacToolTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8A151B99F6C55AC25A135170 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E0C54DA8A14154192C99B /* CursorMovement */,
+				E3CE2DB6F19EE05F11CB158F /* LoginItem */,
+				E89D2753A6EB83FBD80601E4 /* Permissions */,
+				6257D9184697EA92A559DBB4 /* Persistence */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C8E332E99E726BB58812CECC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C41CA7808195917842F41C9E /* MacTool.app */,
+				D874AFA0D8377D097E3441F8 /* MacToolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3CE2DB6F19EE05F11CB158F /* LoginItem */ = {
+			isa = PBXGroup;
+			children = (
+				79D809AD10372F9A6A34F7BB /* LoginItemService.swift */,
+			);
+			path = LoginItem;
+			sourceTree = "<group>";
+		};
+		E89D2753A6EB83FBD80601E4 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				24B5CCFC5CA3A1926F3DA91E /* PermissionsService.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		EB5E0C54DA8A14154192C99B /* CursorMovement */ = {
+			isa = PBXGroup;
+			children = (
+				F597BC3D1286E6356898EF31 /* CursorMovementInterval.swift */,
+				595EF7966569C8FF1CB6D807 /* CursorMovementService.swift */,
+				4C6FE7EC6A6AB816404718DA /* MouseNudgePerforming.swift */,
+			);
+			path = CursorMovement;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A34725E3DE1B9F6C459B28F /* MacTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B2A2A23AC0E0EBE68A7B2BB /* Build configuration list for PBXNativeTarget "MacTool" */;
+			buildPhases = (
+				0B8F5829B2C40061FABC6A29 /* Sources */,
+				D5C7BABA619679FE2C8E52A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacTool;
+			packageProductDependencies = (
+			);
+			productName = MacTool;
+			productReference = C41CA7808195917842F41C9E /* MacTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A63D0E63062C8B1D65BE15B /* MacToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D20F2E65EDF52EBB5CAFFA6B /* Build configuration list for PBXNativeTarget "MacToolTests" */;
+			buildPhases = (
+				BF87A1EED0FB57F43580F5B0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				967CB5DFBEA3434130912476 /* PBXTargetDependency */,
+			);
+			name = MacToolTests;
+			packageProductDependencies = (
+			);
+			productName = MacToolTests;
+			productReference = D874AFA0D8377D097E3441F8 /* MacToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1B684E0DD86252F65AA5658 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5A34725E3DE1B9F6C459B28F = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A81A677DB72D71087CD57D27 /* Build configuration list for PBXProject "MacTool" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 65E5C4F0287E16A9243D5947;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C8E332E99E726BB58812CECC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A34725E3DE1B9F6C459B28F /* MacTool */,
+				7A63D0E63062C8B1D65BE15B /* MacToolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5C7BABA619679FE2C8E52A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75AC0E9FB23E4FD4D5FDF61 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B8F5829B2C40061FABC6A29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D00A9FE9F63A901A5F12547C /* AppEnvironment.swift in Sources */,
+				BC1CB7052EC84A12D19F20F9 /* CursorMovementInterval.swift in Sources */,
+				911984AFBB34F8D97D9A8E00 /* CursorMovementService.swift in Sources */,
+				F4390FC5E7BE33AC9C01E701 /* LoginItemService.swift in Sources */,
+				3D56A23D3C23F3486DB2C414 /* MacToolApp.swift in Sources */,
+				F150958CE1CB703F34B14E1A /* MouseNudgePerforming.swift in Sources */,
+				426F07C343E207F3AC7FD052 /* PermissionsService.swift in Sources */,
+				4F627BEC80F4FAAA6E5ADA6F /* PermissionsView.swift in Sources */,
+				E54CC86933F86191A3F1D049 /* SettingsStore.swift in Sources */,
+				0214AF5196B5D71F2000C994 /* TrayMenuView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF87A1EED0FB57F43580F5B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57E61B170293EBC6C4CC0E4E /* CursorMovementIntervalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		967CB5DFBEA3434130912476 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A34725E3DE1B9F6C459B28F /* MacTool */;
+			targetProxy = F969570ABABA171E1A03A43E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01D35EFF601E68CF747A3F45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		40113ED599726D14816D8056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4A57F6B79BCF67EC083492D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacToolTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacTool";
+			};
+			name = Release;
+		};
+		7A6195F2169F9E4FCB799C57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacTool/Resources/MacTool.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacTool/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacTool;
+				PRODUCT_NAME = MacTool;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A238D4A341C4672AB6923BDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacToolTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacTool";
+			};
+			name = Debug;
+		};
+		A2F1244E697255484B3271CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacTool/Resources/MacTool.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacTool/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacTool;
+				PRODUCT_NAME = MacTool;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B2A2A23AC0E0EBE68A7B2BB /* Build configuration list for PBXNativeTarget "MacTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2F1244E697255484B3271CB /* Debug */,
+				7A6195F2169F9E4FCB799C57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A81A677DB72D71087CD57D27 /* Build configuration list for PBXProject "MacTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01D35EFF601E68CF747A3F45 /* Debug */,
+				40113ED599726D14816D8056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D20F2E65EDF52EBB5CAFFA6B /* Build configuration list for PBXNativeTarget "MacToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A238D4A341C4672AB6923BDA /* Debug */,
+				4A57F6B79BCF67EC083492D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1B684E0DD86252F65AA5658 /* Project object */;
+}

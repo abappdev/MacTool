@@ -1,0 +1,74 @@
+name: MacTool
+options:
+  bundleIdPrefix: studio.developer
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "1.0"
+targets:
+  MacTool:
+    type: application
+    platform: macOS
+    sources:
+      - path: MacTool
+        excludes:
+          - Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: studio.developer.MacTool
+        PRODUCT_NAME: MacTool
+        INFOPLIST_FILE: MacTool/Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: MacTool/Resources/MacTool.entitlements
+        GENERATE_INFOPLIST_FILE: false
+        COMBINE_HIDPI_IMAGES: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        ENABLE_HARDENED_RUNTIME: true
+        CODE_SIGN_STYLE: Automatic
+        # Unsigned local debug builds are fine; set a Team ID in Xcode for distribution.
+        CODE_SIGN_IDENTITY: "-"
+    info:
+      path: MacTool/Resources/Info.plist
+      properties:
+        LSUIElement: true
+        NSAccessibilityUsageDescription: >-
+          MacTool needs Accessibility access to post tiny (1px) synthetic mouse moves
+          so corporate apps (for example Microsoft Teams) see you as active and so
+          AI-agent workflows keep this Mac awake.
+    entitlements:
+      path: MacTool/Resources/MacTool.entitlements
+    scheme:
+      testTargets:
+        - MacToolTests
+
+  MacToolTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests/MacToolTests
+    dependencies:
+      - target: MacTool
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: studio.developer.MacToolTests
+        GENERATE_INFOPLIST_FILE: true
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/MacTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacTool"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  MacTool:
+    build:
+      targets:
+        MacTool: all
+        MacToolTests: [test]
+    test:
+      targets:
+        - MacToolTests
+    run:
+      config: Debug
