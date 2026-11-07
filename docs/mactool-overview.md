@@ -38,7 +38,7 @@ Run the **MacTool** scheme. No Dock icon — use the menu-bar cursor icon.
 
 ## Open questions
 
-1. Bundle ID `studio.developer.MacTool` — change before publishing?
+1. Bundle ID is `in.abappdev.MacTool` (test target: `in.abappdev.MacToolTests`).
 2. Custom menu-bar / App Icon artwork still placeholder.
 3. GitHub remote — none yet; local git only until a remote is created.
 4. Confirm whether Teams (or other target apps) need a larger nudge or a click in locked-screen scenarios (current design: 1px move only).

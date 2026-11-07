@@ -423,7 +423,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacToolTests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.abappdev.MacToolTests;
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacTool";
 			};
@@ -441,7 +441,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MacTool/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacTool;
+				PRODUCT_BUNDLE_IDENTIFIER = in.abappdev.MacTool;
 				PRODUCT_NAME = MacTool;
 				SDKROOT = macosx;
 			};
@@ -459,7 +459,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacToolTests;
+				PRODUCT_BUNDLE_IDENTIFIER = in.abappdev.MacToolTests;
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacTool";
 			};
@@ -477,7 +477,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MacTool/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = studio.developer.MacTool;
+				PRODUCT_BUNDLE_IDENTIFIER = in.abappdev.MacTool;
 				PRODUCT_NAME = MacTool;
 				SDKROOT = macosx;
 			};
