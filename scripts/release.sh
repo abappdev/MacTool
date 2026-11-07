@@ -168,9 +168,8 @@ if [[ ! -f "$BACKGROUND_PNG" ]]; then
   fi
 fi
 
-log "Stage DMG contents (app + Applications shortcut)"
+log "Stage DMG contents (app only; create-dmg adds Applications drop-link)"
 ditto "$EXPORT_DIR/$APP_NAME" "$DMG_STAGE/$APP_NAME"
-ln -s /Applications "$DMG_STAGE/Applications"
 
 log "Create drop-to-Applications DMG"
 rm -f "$DIST_DIR/$DMG_NAME"
