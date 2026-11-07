@@ -5,11 +5,8 @@ struct MacToolApp: App {
     @StateObject private var environment = AppEnvironment()
 
     var body: some Scene {
-        MenuBarExtra {
+        MenuBarExtra("MacTool", systemImage: "cursorarrow.click.2") {
             TrayMenuView(environment: environment)
-        } label: {
-            // Template asset: chubby mouse silhouette, system-tinted for light/dark menu bar.
-            Label("MacTool", image: "MenuBarIcon")
         }
         .menuBarExtraStyle(.menu)
 

@@ -21,6 +21,6 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSAccessibilityUsageDescription</key>
-	<string>MacTool needs Accessibility access to post tiny (1px) synthetic mouse moves so corporate apps (for example Microsoft Teams) see you as active and so AI-agent workflows keep this Mac awake.</string>
+	<string>MacTool needs Accessibility access to post tiny (1px) synthetic mouse moves. Accessibility is required for posting mouse events.</string>
 </dict>
 </plist>

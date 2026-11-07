@@ -1,6 +1,6 @@
 # MacTool
 
-macOS **menu-bar** utility. First feature: **Cursor Movement** (“Don’t Make Mac Idle”) — tiny 1px synthetic mouse moves so corporate apps (e.g. Microsoft Teams) see you as active, and so AI-agent workflows keep the Mac awake.
+macOS **menu-bar** utility. First feature: **Cursor Movement** — schedules tiny (1px) synthetic cursor movements via Accessibility APIs.
 
 ## Requirements
 
@@ -24,13 +24,13 @@ xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' bu
 open ~/Library/Developer/Xcode/DerivedData/MacTool-*/Build/Products/Debug/MacTool.app
 ```
 
-The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the **chubby mouse mascot** tray icon (`MenuBarIcon` template — system-tinted for light/dark menu bar).
+The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the `cursorarrow.click.2` SF Symbol in the menu bar.
 
 ## Tray menu
 
 1. **Cursor Movement** — Off | Every 30 sec | 1 min | 2 min | 5 min | 10 min  
    Selection persists across launches. Choosing an interval starts/reschedules a 1px nudge; **Off** stops it.
-2. **Settings…** — sidebar window with **Cursor Movement** and **Permissions** tabs (mascot in the sidebar).
+2. **Settings…** — sidebar window with **Cursor Movement** and **Permissions** tabs.
 3. **Open at Login** — `SMAppService` toggle (also in Settings → Permissions).
 4. **Quit MacTool**
 
@@ -38,7 +38,7 @@ The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the **chubby
 
 | Permission | Required? | Why |
 |---|---|---|
-| **Accessibility** | Yes | Post synthetic `CGEvent` mouse moves that other apps observe as activity. |
+| **Accessibility** | Yes | Required for posting synthetic `CGEvent` mouse events. |
 | **Input Monitoring** | No (optional) | MacTool does not monitor input; listed for IT policy completeness. |
 | **Login Items** | Optional | Open at Login via `SMAppService`. |
 

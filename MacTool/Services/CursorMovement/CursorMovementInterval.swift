@@ -1,6 +1,6 @@
 import Foundation
 
-/// Supported nudge intervals for the "Don't Make Mac Idle" feature.
+/// Supported nudge intervals for the Cursor Movement feature.
 enum CursorMovementInterval: String, CaseIterable, Identifiable, Codable {
     case off
     case every30Seconds

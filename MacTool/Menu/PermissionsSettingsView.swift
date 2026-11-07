@@ -16,28 +16,19 @@ struct PermissionsSettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                HStack(alignment: .center, spacing: 16) {
-                    Image("Mascot")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 72, height: 72)
-                        .accessibilityHidden(true)
-
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Permissions")
-                            .font(.title2.weight(.semibold))
-                        Text("Grant access so the chubby mouse can nudge the cursor for you.")
-                            .foregroundStyle(.secondary)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Permissions")
+                        .font(.title2.weight(.semibold))
+                    Text("Grant access so MacTool can post synthetic mouse events.")
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
 
                 GroupBox("Why this is needed") {
                     Text(
                         """
-                        MacTool’s Cursor Movement feature posts tiny (1px) synthetic mouse moves \
-                        so corporate apps such as Microsoft Teams treat you as active, and so \
-                        AI-agent workflows keep the Mac awake instead of sleeping or locking.
+                        MacTool’s Cursor Movement feature posts tiny (1px) synthetic mouse \
+                        moves. Accessibility is required for posting those mouse events.
                         """
                     )
                     .font(.callout)

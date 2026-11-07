@@ -13,25 +13,17 @@ struct CursorMovementSettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                HStack(alignment: .center, spacing: 16) {
-                    Image("Mascot")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 96, height: 96)
-                        .accessibilityHidden(true)
-
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Cursor Movement")
-                            .font(.title2.weight(.semibold))
-                        Text(
-                            """
-                            Tiny 1px mouse nudges so corporate apps (like Teams) see you \
-                            as active, and so AI-agent workflows keep this Mac awake.
-                            """
-                        )
-                        .foregroundStyle(.secondary)
-                        .fixedSize(horizontal: false, vertical: true)
-                    }
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Cursor Movement")
+                        .font(.title2.weight(.semibold))
+                    Text(
+                        """
+                        Posts tiny (1px) synthetic cursor movements on a chosen interval \
+                        via the Accessibility APIs.
+                        """
+                    )
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
                 }
 
                 GroupBox("Interval") {

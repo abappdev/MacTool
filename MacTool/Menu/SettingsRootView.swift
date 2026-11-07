@@ -29,7 +29,7 @@ struct SettingsRootView: View {
     var body: some View {
         NavigationSplitView {
             VStack(spacing: 0) {
-                mascotHeader
+                sidebarHeader
                     .padding(.top, 16)
                     .padding(.bottom, 8)
 
@@ -57,18 +57,16 @@ struct SettingsRootView: View {
         .navigationTitle("MacTool Settings")
     }
 
-    private var mascotHeader: some View {
-        VStack(spacing: 6) {
-            Image("Mascot")
-                .resizable()
-                .interpolation(.high)
-                .scaledToFit()
-                .frame(width: 72, height: 72)
-                .accessibilityLabel("MacTool mascot")
+    private var sidebarHeader: some View {
+        VStack(spacing: 4) {
+            Image(systemName: "cursorarrow.click.2")
+                .font(.system(size: 28, weight: .medium))
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
 
             Text("MacTool")
                 .font(.headline)
-            Text("Don’t make Mac idle")
+            Text("Cursor Movement")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

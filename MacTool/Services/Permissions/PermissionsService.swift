@@ -38,7 +38,7 @@ final class PermissionsService: PermissionsChecking {
 
     func openInputMonitoringSettings() {
         // Listed for completeness: MacTool posts events; it does not monitor them.
-        // Some corporate policies still expect Input Monitoring to be reviewed.
+        // Some IT policies still expect Input Monitoring to be reviewed.
         openURL("x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent")
     }
 

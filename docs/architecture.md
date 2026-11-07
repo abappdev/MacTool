@@ -47,7 +47,7 @@ MacTool/
 - [x] No private APIs
 - [x] Privacy usage string for Accessibility
 - [x] Clear entitlement comments for reviewers / future you
-- [x] Custom App Icon + template `MenuBarIcon` + color `Mascot` (chubby mouse; sources under `Design/`)
+- [x] Menu-bar tray uses system SF Symbol (`cursorarrow.click.2`); AppIcon slots left empty/default
 - [ ] Signing Team + Developer ID / notarization for distribution
 - [ ] Decide: stay outside App Store (recommended for this feature) or drop synthetic input for a sandboxed variant
 

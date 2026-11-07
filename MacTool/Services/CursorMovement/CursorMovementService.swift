@@ -1,6 +1,6 @@
 import Foundation
 
-/// Schedules periodic 1px mouse nudges so the Mac / corporate apps stay "active".
+/// Schedules periodic 1px synthetic mouse nudges on a chosen interval.
 @MainActor
 final class CursorMovementService: ObservableObject {
     @Published private(set) var interval: CursorMovementInterval

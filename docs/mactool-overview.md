@@ -1,19 +1,16 @@
 # MacTool overview
 
 **Path:** `/Users/ab/DeveloperStudio/MacTool`  
-**Kind:** macOS menu-bar (`LSUIElement`) utility — first release feature **Cursor Movement / Don’t Make Mac Idle**.
+**Kind:** macOS menu-bar (`LSUIElement`) utility — first release feature **Cursor Movement**.
 
 ## What it does
 
-Posts tiny **1px** synthetic mouse moves on a chosen interval so:
-
-- Corporate apps (e.g. **Microsoft Teams**) treat the user as active.
-- **AI-agent** workflows are less likely to hit sleep / idle lock while unattended.
+Posts tiny **1px** synthetic cursor movements on a chosen interval. Accessibility is required for posting mouse events.
 
 ## Tray menu
 
 - **Cursor Movement** → Off · 30 sec · 1 · 2 · 5 · 10 min (persisted)
-- **Settings…** → sidebar with **Cursor Movement** and **Permissions** (chubby mouse mascot)
+- **Settings…** → sidebar with **Cursor Movement** and **Permissions**
 - **Open at Login**
 - **Quit**
 
@@ -23,7 +20,7 @@ Posts tiny **1px** synthetic mouse moves on a chosen interval so:
 open /Users/ab/DeveloperStudio/MacTool/MacTool.xcodeproj
 ```
 
-Run the **MacTool** scheme. No Dock icon — use the chubby mouse tray icon (`MenuBarIcon` template).
+Run the **MacTool** scheme. No Dock icon — use the `cursorarrow.click.2` SF Symbol tray icon.
 
 ## Permissions to expect
 
@@ -39,6 +36,6 @@ Run the **MacTool** scheme. No Dock icon — use the chubby mouse tray icon (`Me
 ## Open questions
 
 1. Bundle ID is `in.abappdev.MacTool` (test target: `in.abappdev.MacToolTests`).
-2. Chubby mouse mascot: color `Mascot` / AppIcon + template `MenuBarIcon` (see `Design/` and `Assets.xcassets`).
+2. Menu bar uses system SF Symbol `cursorarrow.click.2` (no custom tray artwork).
 3. GitHub remote — none yet; local git only until a remote is created.
-4. Confirm whether Teams (or other target apps) need a larger nudge or a click in locked-screen scenarios (current design: 1px move only).
+4. Confirm whether a larger nudge or a click is needed in locked-screen scenarios (current design: 1px move only).

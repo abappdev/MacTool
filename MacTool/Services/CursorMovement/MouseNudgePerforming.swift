@@ -12,8 +12,7 @@ protocol MouseNudgePerforming: AnyObject {
 ///
 /// **TCC / entitlements**
 /// - Requires the process to be trusted for **Accessibility** so synthetic HID
-///   events are accepted system-wide (needed for corporate apps like Teams to
-///   observe activity, and for agent workflows that depend on an awake Mac).
+///   events are accepted system-wide (required for posting mouse events).
 /// - Does **not** use private APIs.
 /// - Sandboxed App Store builds typically cannot post synthetic input that
 ///   affects other apps; distribute outside the sandbox (Developer ID) or
