@@ -24,7 +24,7 @@ xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' bu
 open ~/Library/Developer/Xcode/DerivedData/MacTool-*/Build/Products/Debug/MacTool.app
 ```
 
-The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the `cursorarrow.click.2` SF Symbol in the menu bar.
+The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the `cursorarrow.click.2` SF Symbol in the menu bar. The Finder/About **App Icon** is a teal cursor mark in `MacTool/Resources/Assets.xcassets/AppIcon.appiconset/` (regenerate with `scripts/generate_app_icon.py` if needed).
 
 ## Tray menu
 

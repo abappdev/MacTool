@@ -36,6 +36,6 @@ Run the **MacTool** scheme. No Dock icon — use the `cursorarrow.click.2` SF Sy
 ## Open questions
 
 1. Bundle ID is `in.abappdev.MacTool` (test target: `in.abappdev.MacToolTests`).
-2. Menu bar uses system SF Symbol `cursorarrow.click.2` (no custom tray artwork).
+2. Menu bar uses system SF Symbol `cursorarrow.click.2` (no custom tray artwork). Finder/About App Icon is the teal cursor mark in `AppIcon.appiconset`.
 3. GitHub remote — none yet; local git only until a remote is created.
 4. Confirm whether a larger nudge or a click is needed in locked-screen scenarios (current design: 1px move only).
