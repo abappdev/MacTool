@@ -3,8 +3,8 @@
 # (optional) notarize + staple → GitHub Release.
 #
 # Shared signing env (put in ~/.zshrc — common across apps):
-#   MACTOOL_TEAM_ID
-#   MACTOOL_SIGN_IDENTITY
+#   APPLE_TEAM_ID
+#   APPLE_SIGN_IDENTITY
 # Notary profile is hardcoded to "MacTool" (Keychain via notarytool store-credentials).
 # Optional:
 #   MACTOOL_VERSION (default 1.0.1)
@@ -22,8 +22,8 @@ cd "$ROOT"
 
 VERSION="${MACTOOL_VERSION:-1.0.1}"
 BUILD_NUMBER="${MACTOOL_BUILD:-1}"
-TEAM_ID="${MACTOOL_TEAM_ID:-}"
-SIGN_IDENTITY="${MACTOOL_SIGN_IDENTITY:-}"
+TEAM_ID="${APPLE_TEAM_ID:-}"
+SIGN_IDENTITY="${APPLE_SIGN_IDENTITY:-}"
 BUNDLE_ID="in.abappdev.MacTool"
 SCHEME="MacTool"
 CONFIGURATION="Release"
@@ -77,8 +77,8 @@ if [[ "$SKIP_GITHUB" -eq 0 ]]; then
   require_cmd gh
 fi
 
-[[ -n "$TEAM_ID" ]] || die "MACTOOL_TEAM_ID is not set (see scripts/env.example)"
-[[ -n "$SIGN_IDENTITY" ]] || die "MACTOOL_SIGN_IDENTITY is not set (see scripts/env.example)"
+[[ -n "$TEAM_ID" ]] || die "APPLE_TEAM_ID is not set (add to ~/.zshrc — see scripts/env.example)"
+[[ -n "$SIGN_IDENTITY" ]] || die "APPLE_SIGN_IDENTITY is not set (add to ~/.zshrc — see scripts/env.example)"
 
 if ! security find-identity -v -p codesigning | grep -F "$SIGN_IDENTITY" >/dev/null; then
   die "codesigning identity not found. Run: security find-identity -v -p codesigning"

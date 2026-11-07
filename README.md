@@ -57,10 +57,11 @@ Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`.
 Credentials live in your shell env (not in the repo). See [`scripts/env.example`](scripts/env.example) and [`docs/release.md`](docs/release.md).
 
 ```bash
-# after exporting MACTOOL_TEAM_ID + MACTOOL_SIGN_IDENTITY
+# after APPLE_TEAM_ID + APPLE_SIGN_IDENTITY in ~/.zshrc
 ./scripts/release.sh                 # notarized DMG + GitHub Release
 ./scripts/release.sh --skip-notarize # signed DMG + GitHub Release
 ```
+
 
 > Prefer GitHub Releases / Developer ID over the Mac App Store: App Sandbox blocks synthetic input that affects other apps.
 
