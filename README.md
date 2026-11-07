@@ -2,15 +2,15 @@
 
 macOS **menu-bar** utility. First feature: **Cursor Movement** — schedules tiny (1px) synthetic cursor movements via Accessibility APIs.
 
-**Download:** [GitHub Releases](https://github.com/abappdev/MacTool/releases) · **Current:** v1.0.0  
+**Download:** [GitHub Releases](https://github.com/abappdev/MacTool/releases) · **Current:** v1.0.1  
 **Bundle ID:** `in.abappdev.MacTool`
 
 ## Install (release build)
 
-1. Grab `MacTool-1.0.0.zip` from [Releases](https://github.com/abappdev/MacTool/releases/latest)
-2. Unzip and move `MacTool.app` to **Applications**
-3. Open once (right-click → **Open** if Gatekeeper warns)
-4. When you enable Cursor Movement, grant **Accessibility** (Settings → Permissions)
+1. Download `MacTool-1.0.1.dmg` from [Releases](https://github.com/abappdev/MacTool/releases/latest)
+2. Open the disk image → drag **MacTool** to **Applications**
+3. Eject the DMG, open MacTool from Applications (right-click → **Open** if Gatekeeper warns)
+4. Grant **Accessibility** when enabling Cursor Movement (Settings → Permissions)
 
 ```bash
 codesign -dv --verbose=4 /Applications/MacTool.app
@@ -26,17 +26,16 @@ spctl --assess --type execute /Applications/MacTool.app
 ## Open & run (debug)
 
 ```bash
-open /Users/ab/DeveloperStudio/MacTool/MacTool.xcodeproj
+open MacTool.xcodeproj
 ```
 
 Or:
 
 ```bash
-cd /Users/ab/DeveloperStudio/MacTool
 xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' build
 ```
 
-Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`. App Icon lives in `MacTool/Resources/Assets.xcassets/AppIcon.appiconset/`.
+Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`.
 
 ## Tray menu
 
@@ -53,26 +52,24 @@ Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`. App
 | **Input Monitoring** | Optional | MacTool does not monitor input |
 | **Login Items** | Optional | Open at Login via `SMAppService` |
 
-## Release (Developer ID)
+## Release (Developer ID DMG)
 
-One script builds, signs, zips, optionally notarizes, and publishes to GitHub:
+Credentials live in your shell env (not in the repo). See [`scripts/env.example`](scripts/env.example) and [`docs/release.md`](docs/release.md).
 
 ```bash
-./scripts/release.sh                 # notarize + GitHub Release (needs notarytool profile)
-./scripts/release.sh --skip-notarize # Developer ID signed zip + GitHub Release
+# after exporting MACTOOL_TEAM_ID + MACTOOL_SIGN_IDENTITY
+./scripts/release.sh                 # notarized DMG + GitHub Release
+./scripts/release.sh --skip-notarize # signed DMG + GitHub Release
 ```
 
-Full notes: [docs/release.md](docs/release.md). Architecture: [docs/architecture.md](docs/architecture.md).
-
-> Mac App Store distribution is not recommended for this feature: App Sandbox blocks synthetic input that affects other apps. Prefer Developer ID / GitHub Releases.
+> Prefer GitHub Releases / Developer ID over the Mac App Store: App Sandbox blocks synthetic input that affects other apps.
 
 ## Tests
 
 ```bash
-cd /Users/ab/DeveloperStudio/MacTool
 xcodebuild -scheme MacTool -destination 'platform=macOS' test
 ```
 
 ## License
 
-Copyright © 2026 Abhishek Bhalerao. All rights reserved.
+Copyright © 2026. All rights reserved.

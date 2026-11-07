@@ -1,72 +1,85 @@
 # Releasing MacTool
 
-MacTool is distributed **outside the Mac App Store** via **Developer ID** signing (and notarization when credentials are configured). Synthetic cursor events require a non-sandboxed build.
+Distributed via **Developer ID** + **DMG** on GitHub Releases (not the Mac App Store).
 
-## Prerequisites
+## Credentials (bashrc / zshrc)
 
-- Xcode + command-line tools
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`)
-- Developer ID Application certificate in the login keychain  
-  (this machine: `Developer ID Application: Abhishek Bhalerao (44GWMTNP57)`)
-- Team ID: `44GWMTNP57`
-- Bundle ID: `in.abappdev.MacTool`
-- `gh` authenticated to [abappdev/MacTool](https://github.com/abappdev/MacTool)
-
-### One-time notarization (recommended)
-
-1. Create an [app-specific password](https://appleid.apple.com) for your Apple ID.
-2. Store a notarytool profile:
+List signing identities on this Mac:
 
 ```bash
-xcrun notarytool store-credentials "MacTool" \
-  --apple-id "YOUR_APPLE_ID" \
-  --team-id "44GWMTNP57" \
-  --password "app-specific-password"
+security find-identity -v -p codesigning
+```
+
+Add exports (values from the command above — do **not** commit secrets):
+
+```bash
+# ~/.zshrc  (or ~/.bashrc)
+export MACTOOL_TEAM_ID="YOUR_TEAM_ID"   # 10-char Team ID in parentheses
+export MACTOOL_SIGN_IDENTITY="Developer ID Application: Your Name (YOUR_TEAM_ID)"
+export MACTOOL_NOTARY_PROFILE="MacTool"
+# export MACTOOL_APPLE_ID="you@example.com"   # only needed when storing notary creds
+```
+
+Template: [`scripts/env.example`](../scripts/env.example)
+
+Reload:
+
+```bash
+source ~/.zshrc
+```
+
+### One-time notarization profile (Keychain)
+
+```bash
+xcrun notarytool store-credentials "$MACTOOL_NOTARY_PROFILE" \
+  --apple-id "$MACTOOL_APPLE_ID" \
+  --team-id "$MACTOOL_TEAM_ID" \
+  --password "<app-specific-password>"   # https://appleid.apple.com → App-Specific Passwords
 ```
 
 ## Single release command
 
 ```bash
-cd /Users/ab/DeveloperStudio/MacTool
-./scripts/release.sh
+cd /path/to/MacTool
+./scripts/release.sh                 # DMG + notarize + GitHub (needs notary profile)
+./scripts/release.sh --skip-notarize # DMG signed only
 ```
 
-This will:
+Defaults: `MACTOOL_VERSION=1.0.1`, `MACTOOL_BUILD=1`.
 
-1. Set version **1.0.0** (override with `MACTOOL_VERSION` / `MACTOOL_BUILD`)
-2. Regenerate the Xcode project from `project.yml`
-3. Archive a **Release** build
-4. Sign with **Developer ID** + Hardened Runtime + secure timestamp
-5. Zip `dist/MacTool-<version>.zip` (+ `.sha256`)
-6. Notarize + staple (unless `--skip-notarize`)
-7. Commit if needed, tag `v<version>`, push, and create a **GitHub Release** with the zip
+Pipeline:
 
-### Useful flags
+1. Archive Release with Developer ID + Hardened Runtime  
+2. Build a **drop-to-Applications** DMG (`create-dmg` + background art)  
+3. Sign the DMG  
+4. Notarize + staple the DMG (unless `--skip-notarize`)  
+5. Tag + GitHub Release uploading `MacTool-<version>.dmg`
+
+### Flags
 
 | Flag | Meaning |
 |---|---|
-| `--skip-notarize` | Signed zip only (Gatekeeper may warn until notarized) |
-| `--skip-github` | Build artifacts only; no tag/release |
-| `--dry-run` | Print the plan |
+| `--skip-notarize` | Skip Apple notary |
+| `--skip-github` | Artifacts only |
+| `--dry-run` | Print plan |
 
-### Environment overrides
+### Env vars
 
-| Variable | Default |
-|---|---|
-| `MACTOOL_VERSION` | `1.0.0` |
-| `MACTOOL_BUILD` | `1` |
-| `MACTOOL_TEAM_ID` | `44GWMTNP57` |
-| `MACTOOL_SIGN_IDENTITY` | `Developer ID Application: Abhishek Bhalerao (44GWMTNP57)` |
-| `MACTOOL_NOTARY_PROFILE` | `MacTool` |
+| Variable | Required | Notes |
+|---|---|---|
+| `MACTOOL_TEAM_ID` | yes | Apple Team ID |
+| `MACTOOL_SIGN_IDENTITY` | yes | Full Developer ID Application identity string |
+| `MACTOOL_NOTARY_PROFILE` | for notarize | Keychain profile name |
+| `MACTOOL_VERSION` | no | default `1.0.1` |
+| `MACTOOL_BUILD` | no | default `1` |
 
-## Install from GitHub Releases
+## Install from Releases
 
-1. Download `MacTool-1.0.0.zip` from [Releases](https://github.com/abappdev/MacTool/releases)
-2. Unzip → move `MacTool.app` to `/Applications`
-3. First open: right-click → **Open** if macOS shows a warning
-4. Enable **Accessibility** for MacTool when using Cursor Movement
+1. Download `MacTool-*.dmg`
+2. Open → drag **MacTool** to **Applications**
+3. Eject → launch from Applications
 
-## Verify a local build
+## Verify
 
 ```bash
 codesign -dv --verbose=4 /Applications/MacTool.app

@@ -24,4 +24,3 @@ playground.xcworkspace
 *~
 .idea/
 .tools-venv/
-scripts/release.sh
