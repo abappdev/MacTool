@@ -1,7 +1,8 @@
 # MacTool overview
 
 **Path:** `/Users/ab/DeveloperStudio/MacTool`  
-**Kind:** macOS menu-bar (`LSUIElement`) utility — first release feature **Cursor Movement**.
+**Repo:** https://github.com/abappdev/MacTool · **Release:** v1.0.0  
+**Kind:** macOS menu-bar (`LSUIElement`) utility — **Cursor Movement**.
 
 ## What it does
 

@@ -2,58 +2,69 @@
 
 macOS **menu-bar** utility. First feature: **Cursor Movement** — schedules tiny (1px) synthetic cursor movements via Accessibility APIs.
 
+**Download:** [GitHub Releases](https://github.com/abappdev/MacTool/releases) · **Current:** v1.0.0  
+**Bundle ID:** `in.abappdev.MacTool`
+
+## Install (release build)
+
+1. Grab `MacTool-1.0.0.zip` from [Releases](https://github.com/abappdev/MacTool/releases/latest)
+2. Unzip and move `MacTool.app` to **Applications**
+3. Open once (right-click → **Open** if Gatekeeper warns)
+4. When you enable Cursor Movement, grant **Accessibility** (Settings → Permissions)
+
+```bash
+codesign -dv --verbose=4 /Applications/MacTool.app
+spctl --assess --type execute /Applications/MacTool.app
+```
+
 ## Requirements
 
 - macOS 13+
-- Xcode 15+ (built with Xcode 27 on this machine)
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) only if you regenerate the project from `project.yml`
+- Xcode 15+ (to build from source)
+- [XcodeGen](https://github.com/yonaskolb/XcodeGen) to regenerate `MacTool.xcodeproj` from `project.yml`
 
-## Open & run
+## Open & run (debug)
 
 ```bash
 open /Users/ab/DeveloperStudio/MacTool/MacTool.xcodeproj
 ```
 
-In Xcode: select the **MacTool** scheme → **My Mac** → Run (⌘R).
-
-Or from the terminal:
+Or:
 
 ```bash
 cd /Users/ab/DeveloperStudio/MacTool
 xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' build
-open ~/Library/Developer/Xcode/DerivedData/MacTool-*/Build/Products/Debug/MacTool.app
 ```
 
-The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the `cursorarrow.click.2` SF Symbol in the menu bar. The Finder/About **App Icon** is a teal cursor mark in `MacTool/Resources/Assets.xcassets/AppIcon.appiconset/` (regenerate with `scripts/generate_app_icon.py` if needed).
+Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`. App Icon lives in `MacTool/Resources/Assets.xcassets/AppIcon.appiconset/`.
 
 ## Tray menu
 
-1. **Cursor Movement** — Off | Every 30 sec | 1 min | 2 min | 5 min | 10 min  
-   Selection persists across launches. Choosing an interval starts/reschedules a 1px nudge; **Off** stops it.
-2. **Settings…** — sidebar window with **Cursor Movement** and **Permissions** tabs.
-3. **Open at Login** — `SMAppService` toggle (also in Settings → Permissions).
+1. **Cursor Movement** — Off | Every 30 sec | 1 min | 2 min | 5 min | 10 min (persisted)
+2. **Settings…** — sidebar: **Cursor Movement** | **Permissions**
+3. **Open at Login**
 4. **Quit MacTool**
 
 ## Permissions (TCC)
 
 | Permission | Required? | Why |
 |---|---|---|
-| **Accessibility** | Yes | Required for posting synthetic `CGEvent` mouse events. |
-| **Input Monitoring** | No (optional) | MacTool does not monitor input; listed for IT policy completeness. |
-| **Login Items** | Optional | Open at Login via `SMAppService`. |
+| **Accessibility** | Yes | Required to post synthetic `CGEvent` mouse events |
+| **Input Monitoring** | Optional | MacTool does not monitor input |
+| **Login Items** | Optional | Open at Login via `SMAppService` |
 
-**Expected prompts**
+## Release (Developer ID)
 
-1. On first active interval (or “Request Access…”): macOS Accessibility trust prompt.
-2. Open at Login: may show a Login Items confirmation / appear under **System Settings → General → Login Items**.
+One script builds, signs, zips, optionally notarizes, and publishes to GitHub:
 
-**Manual path:** System Settings → Privacy & Security → Accessibility → enable **MacTool**.
+```bash
+./scripts/release.sh                 # notarize + GitHub Release (needs notarytool profile)
+./scripts/release.sh --skip-notarize # Developer ID signed zip + GitHub Release
+```
 
-Privacy usage string lives in `MacTool/Resources/Info.plist` (`NSAccessibilityUsageDescription`).
+Full notes: [docs/release.md](docs/release.md). Architecture: [docs/architecture.md](docs/architecture.md).
 
-## Architecture
-
-See [docs/architecture.md](docs/architecture.md).
+> Mac App Store distribution is not recommended for this feature: App Sandbox blocks synthetic input that affects other apps. Prefer Developer ID / GitHub Releases.
 
 ## Tests
 
@@ -62,13 +73,6 @@ cd /Users/ab/DeveloperStudio/MacTool
 xcodebuild -scheme MacTool -destination 'platform=macOS' test
 ```
 
-## App Store / sandbox notes
+## License
 
-Synthetic HID events that affect other apps generally require a **non-sandboxed** build plus Accessibility. Sandbox is **disabled** in `MacTool.entitlements` on purpose. Prefer **Developer ID** / direct distribution for this utility. Details in the architecture doc.
-
-## Regenerate project
-
-```bash
-cd /Users/ab/DeveloperStudio/MacTool
-xcodegen generate
-```
+Copyright © 2026 Abhishek Bhalerao. All rights reserved.

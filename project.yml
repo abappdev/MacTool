@@ -10,7 +10,7 @@ settings:
     SWIFT_VERSION: "5.0"
     MACOSX_DEPLOYMENT_TARGET: "13.0"
     CURRENT_PROJECT_VERSION: 1
-    MARKETING_VERSION: "1.0"
+    MARKETING_VERSION: "1.0.0"
 targets:
   MacTool:
     type: application
@@ -30,8 +30,9 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
         ENABLE_HARDENED_RUNTIME: true
+        DEVELOPMENT_TEAM: "44GWMTNP57"
         CODE_SIGN_STYLE: Automatic
-        # Unsigned local debug builds are fine; set a Team ID in Xcode for distribution.
+        # Debug may ad-hoc; Release distribution uses scripts/release.sh (Developer ID).
         CODE_SIGN_IDENTITY: "-"
     info:
       path: MacTool/Resources/Info.plist
