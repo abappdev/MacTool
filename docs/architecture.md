@@ -23,7 +23,8 @@ MacTool/
 | Module | Responsibility | Test seam |
 |---|---|---|
 | `AppEnvironment` | Wires concrete services | Inject fakes in tests |
-| `CursorMovementService` | Main-actor `Timer` scheduling; cancel on Off/Quit | `MouseNudgePerforming`, `SettingsStoring` |
+| `CursorMovementService` | Main-actor `Timer` scheduling + cycle progress for tray ring; cancel on Off/Quit | `MouseNudgePerforming`, `SettingsStoring` |
+| `TrayProgressIcon` | Menu-bar label: SF Symbol + countdown ring via `TimelineView` | Observes `CursorMovementService` |
 | `CGEventMouseNudger` | ±1px move via `CGEvent.post(tap: .cghidEventTap)` | Protocol `MouseNudgePerforming` |
 | `PermissionsService` | `AXIsProcessTrusted` / prompt / open prefs URLs | `PermissionsChecking` |
 | `LoginItemService` | `SMAppService.mainApp` register/unregister | `LoginItemManaging` |

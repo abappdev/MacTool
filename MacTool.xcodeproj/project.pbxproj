@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0214AF5196B5D71F2000C994 /* TrayMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992970CA8D263E971BB5510 /* TrayMenuView.swift */; };
 		06CE428D846AF9CA4E97B565 /* SettingsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9504C96F80889D1CDD8117 /* SettingsRootView.swift */; };
+		18FD619274D6935C1909CDD7 /* TrayProgressIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB94E2724E5694B1A525296 /* TrayProgressIcon.swift */; };
 		3D56A23D3C23F3486DB2C414 /* MacToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F42CD5EE2633776B6BB25 /* MacToolApp.swift */; };
 		426F07C343E207F3AC7FD052 /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5CCFC5CA3A1926F3DA91E /* PermissionsService.swift */; };
 		57E61B170293EBC6C4CC0E4E /* CursorMovementIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA755A1531C34E330B57D6 /* CursorMovementIntervalTests.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		1F9504C96F80889D1CDD8117 /* SettingsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRootView.swift; sourceTree = "<group>"; };
 		24B5CCFC5CA3A1926F3DA91E /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
+		2AB94E2724E5694B1A525296 /* TrayProgressIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayProgressIcon.swift; sourceTree = "<group>"; };
 		46733D469374E292DF0DD413 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		48EA755A1531C34E330B57D6 /* CursorMovementIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorMovementIntervalTests.swift; sourceTree = "<group>"; };
 		4C6FE7EC6A6AB816404718DA /* MouseNudgePerforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseNudgePerforming.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				9BC3F39923F9A2075D48EA6D /* PermissionsSettingsView.swift */,
 				1F9504C96F80889D1CDD8117 /* SettingsRootView.swift */,
 				A992970CA8D263E971BB5510 /* TrayMenuView.swift */,
+				2AB94E2724E5694B1A525296 /* TrayProgressIcon.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				06CE428D846AF9CA4E97B565 /* SettingsRootView.swift in Sources */,
 				E54CC86933F86191A3F1D049 /* SettingsStore.swift in Sources */,
 				0214AF5196B5D71F2000C994 /* TrayMenuView.swift in Sources */,
+				18FD619274D6935C1909CDD7 /* TrayProgressIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

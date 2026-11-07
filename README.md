@@ -35,7 +35,7 @@ Or:
 xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' build
 ```
 
-Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2`.
+Menu-bar only (`LSUIElement`) — tray uses SF Symbol `cursorarrow.click.2` with a countdown progress ring that fills over the selected Cursor Movement interval (e.g. 30 sec → full ring, then resets on nudge).
 
 ## Tray menu
 

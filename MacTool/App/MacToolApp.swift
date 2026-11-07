@@ -5,8 +5,10 @@ struct MacToolApp: App {
     @StateObject private var environment = AppEnvironment()
 
     var body: some Scene {
-        MenuBarExtra("MacTool", systemImage: "cursorarrow.click.2") {
+        MenuBarExtra {
             TrayMenuView(environment: environment)
+        } label: {
+            TrayProgressIcon(cursorMovement: environment.cursorMovement)
         }
         .menuBarExtraStyle(.menu)
 
