@@ -2,12 +2,12 @@
 
 macOS **menu-bar** utility. First feature: **Cursor Movement** — schedules tiny (1px) synthetic cursor movements via Accessibility APIs.
 
-**Download:** [GitHub Releases](https://github.com/abappdev/MacTool/releases) · **Current:** v1.0.1  
+**Download:** [GitHub Releases](https://github.com/abappdev/MacTool/releases) · **Current:** v1.0.2  
 **Bundle ID:** `in.abappdev.MacTool`
 
 ## Install (release build)
 
-1. Download `MacTool-1.0.1.dmg` from [Releases](https://github.com/abappdev/MacTool/releases/latest)
+1. Download `MacTool-1.0.2.dmg` from [Releases](https://github.com/abappdev/MacTool/releases/latest)
 2. Open the disk image → drag **MacTool** to **Applications**
 3. Eject the DMG, open MacTool from Applications (right-click → **Open** if Gatekeeper warns)
 4. Grant **Accessibility** when enabling Cursor Movement (Settings → Permissions)
