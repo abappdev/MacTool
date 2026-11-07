@@ -12,7 +12,7 @@
 ```
 MacTool/
   App/                 Composition root + SwiftUI @main (MenuBarExtra)
-  Menu/                Tray menu + Permissions window
+  Menu/                Tray menu + Settings window (Cursor Movement | Permissions)
   Services/
     CursorMovement/    Interval model, scheduler, CGEvent nudger
     Permissions/       TCC status + System Settings deep links
@@ -47,7 +47,7 @@ MacTool/
 - [x] No private APIs
 - [x] Privacy usage string for Accessibility
 - [x] Clear entitlement comments for reviewers / future you
-- [ ] Custom App Icon asset (placeholder appiconset present)
+- [x] Custom App Icon + template `MenuBarIcon` + color `Mascot` (chubby mouse; sources under `Design/`)
 - [ ] Signing Team + Developer ID / notarization for distribution
 - [ ] Decide: stay outside App Store (recommended for this feature) or drop synthetic input for a sandboxed variant
 

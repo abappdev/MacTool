@@ -5,15 +5,18 @@ struct MacToolApp: App {
     @StateObject private var environment = AppEnvironment()
 
     var body: some Scene {
-        MenuBarExtra("MacTool", systemImage: "cursorarrow.click.2") {
+        MenuBarExtra {
             TrayMenuView(environment: environment)
+        } label: {
+            // Template asset: chubby mouse silhouette, system-tinted for light/dark menu bar.
+            Label("MacTool", image: "MenuBarIcon")
         }
         .menuBarExtraStyle(.menu)
 
-        Window("MacTool Permissions", id: "permissions") {
-            PermissionsView(environment: environment)
+        Window("MacTool Settings", id: "settings") {
+            SettingsRootView(environment: environment)
         }
         .windowResizability(.contentSize)
-        .defaultSize(width: 480, height: 520)
+        .defaultSize(width: 720, height: 480)
     }
 }

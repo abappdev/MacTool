@@ -24,14 +24,14 @@ xcodebuild -scheme MacTool -configuration Debug -destination 'platform=macOS' bu
 open ~/Library/Developer/Xcode/DerivedData/MacTool-*/Build/Products/Debug/MacTool.app
 ```
 
-The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the cursor-click icon in the menu bar.
+The app is an `LSUIElement` (agent) app: **no Dock icon**. Look for the **chubby mouse mascot** tray icon (`MenuBarIcon` template — system-tinted for light/dark menu bar).
 
 ## Tray menu
 
 1. **Cursor Movement** — Off | Every 30 sec | 1 min | 2 min | 5 min | 10 min  
    Selection persists across launches. Choosing an interval starts/reschedules a 1px nudge; **Off** stops it.
-2. **Permissions…** — guidance + deep links into System Settings.
-3. **Open at Login** — `SMAppService` toggle (also available in the Permissions window).
+2. **Settings…** — sidebar window with **Cursor Movement** and **Permissions** tabs (mascot in the sidebar).
+3. **Open at Login** — `SMAppService` toggle (also in Settings → Permissions).
 4. **Quit MacTool**
 
 ## Permissions (TCC)

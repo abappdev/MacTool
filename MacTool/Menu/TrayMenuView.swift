@@ -35,8 +35,8 @@ struct TrayMenuView: View {
 
         Divider()
 
-        Button("Permissions…") {
-            openWindow(id: "permissions")
+        Button("Settings…") {
+            openWindow(id: "settings")
             NSApp.activate(ignoringOtherApps: true)
         }
 

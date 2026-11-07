@@ -22,3 +22,4 @@ playground.xcworkspace
 *.swp
 *~
 .idea/
+.tools-venv/

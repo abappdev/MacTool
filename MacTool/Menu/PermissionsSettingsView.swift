@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// Explains why MacTool needs Accessibility and how to enable Open at Login.
-struct PermissionsView: View {
+/// Permissions settings pane — Accessibility guidance and Open at Login.
+struct PermissionsSettingsView: View {
     @ObservedObject var environment: AppEnvironment
     @State private var status: PermissionStatus
     @State private var openAtLogin: Bool
@@ -16,43 +16,43 @@ struct PermissionsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                header
-                purposeSection
+                HStack(alignment: .center, spacing: 16) {
+                    Image("Mascot")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 72, height: 72)
+                        .accessibilityHidden(true)
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Permissions")
+                            .font(.title2.weight(.semibold))
+                        Text("Grant access so the chubby mouse can nudge the cursor for you.")
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+
+                GroupBox("Why this is needed") {
+                    Text(
+                        """
+                        MacTool’s Cursor Movement feature posts tiny (1px) synthetic mouse moves \
+                        so corporate apps such as Microsoft Teams treat you as active, and so \
+                        AI-agent workflows keep the Mac awake instead of sleeping or locking.
+                        """
+                    )
+                    .font(.callout)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(4)
+                }
+
                 accessibilitySection
                 inputMonitoringSection
                 loginSection
                 refreshRow
             }
             .padding(24)
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(minWidth: 440, minHeight: 380)
         .navigationTitle("Permissions")
-    }
-
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("MacTool Permissions")
-                .font(.title2.weight(.semibold))
-            Text("Grant the access below so Cursor Movement can keep your Mac from looking idle.")
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-    }
-
-    private var purposeSection: some View {
-        GroupBox("Why this is needed") {
-            Text(
-                """
-                MacTool’s Cursor Movement feature posts tiny (1px) synthetic mouse moves \
-                so corporate apps such as Microsoft Teams treat you as active, and so \
-                AI-agent workflows keep the Mac awake instead of sleeping or locking.
-                """
-            )
-            .font(.callout)
-            .fixedSize(horizontal: false, vertical: true)
-            .padding(4)
-        }
     }
 
     private var accessibilitySection: some View {

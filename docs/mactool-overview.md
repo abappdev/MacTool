@@ -13,7 +13,7 @@ Posts tiny **1px** synthetic mouse moves on a chosen interval so:
 ## Tray menu
 
 - **Cursor Movement** → Off · 30 sec · 1 · 2 · 5 · 10 min (persisted)
-- **Permissions…** → Accessibility how-to + System Settings deep links + Open at Login
+- **Settings…** → sidebar with **Cursor Movement** and **Permissions** (chubby mouse mascot)
 - **Open at Login**
 - **Quit**
 
@@ -23,7 +23,7 @@ Posts tiny **1px** synthetic mouse moves on a chosen interval so:
 open /Users/ab/DeveloperStudio/MacTool/MacTool.xcodeproj
 ```
 
-Run the **MacTool** scheme. No Dock icon — use the menu-bar cursor icon.
+Run the **MacTool** scheme. No Dock icon — use the chubby mouse tray icon (`MenuBarIcon` template).
 
 ## Permissions to expect
 
@@ -39,6 +39,6 @@ Run the **MacTool** scheme. No Dock icon — use the menu-bar cursor icon.
 ## Open questions
 
 1. Bundle ID is `in.abappdev.MacTool` (test target: `in.abappdev.MacToolTests`).
-2. Custom menu-bar / App Icon artwork still placeholder.
+2. Chubby mouse mascot: color `Mascot` / AppIcon + template `MenuBarIcon` (see `Design/` and `Assets.xcassets`).
 3. GitHub remote — none yet; local git only until a remote is created.
 4. Confirm whether Teams (or other target apps) need a larger nudge or a click in locked-screen scenarios (current design: 1px move only).
